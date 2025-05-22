@@ -1,0 +1,72 @@
+---
+import Navbar from "./navbar/navbar.astro";
+
+const { title = "Mi Portafolio", description = "Este es el portafolio de [Tu Nombre]", image = "/og-image.jpg", url = "https://tusitio.com" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- SEO básico -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph (para compartir en redes como Facebook) -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Fuente opcional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="/styles/global.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Tu Sitio Freelance",
+        "url": "https://tusitio.com",
+        "description": "Sitio web profesional de Tu Nombre, desarrollador freelance especializado en soluciones web modernas.",
+        "publisher": {
+          "@type": "Person",
+          "name": "Tu Nombre"
+        },
+        "image": "https://tusitio.com/og-image.jpg",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://tusitio.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  </head>
+  <body class="[background:radial-gradient(155%_106%_at_50%_9%,#001_44%,#113_100%)]">
+    
+   
+   <Navbar/>
+   <slot />
+    
+  </body>
+</html>

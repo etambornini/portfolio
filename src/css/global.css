@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: 'NeueMetanaNext-SemiBold';
+  src: url('/fonts/NeueMetanaNext-SemiBold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NeueMetanaNextOutline-Black';
+  src: url('/fonts/NeueMetanaNextOutline-Black.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-neue-outline {
+    font-family: 'NeueMetanaNextOutline-Black', sans-serif;
+}
+.font-neue-semi {
+    font-family: 'NeueMetanaNext-SemiBold', sans-serif;
+}
+.font-neue-semi-italic {
+    font-family: 'NeueMetanaNext-SemiBold', sans-serif;
+    font-style: italic;
+}
+.font-neue-outline-italic {
+    font-family: 'NeueMetanaNextOutline-Black', sans-serif;
+    font-style: italic;
+}
+body{
+    background-color: #000;
+}
+h1{
+    font-weight: normal;
+    line-height: 1.2;
+}
