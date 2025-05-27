@@ -17,6 +17,53 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Chivo-Black';
+  src: url('/fonts/chivo/Chivo-Black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Chivo-ExtraBold';
+  src: url('/fonts/chivo/Chivo-ExtraBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Chivo-Bold';
+  src: url('/fonts/chivo/Chivo-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Chivo-SemiBold';
+  src: url('/fonts/chivo/Chivo-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Chivo-Medium';
+  src: url('/fonts/chivo/Chivo-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Chivo-Regular';
+  src: url('/fonts/chivo/Chivo-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Chivo-Italic';
+  src: url('/fonts/chivo/Chivo-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Chivo-Light';
+  src: url('/fonts/chivo/Chivo-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Chivo-Thin';
+  src: url('/fonts/chivo/Chivo-Thin.woff2') format('woff2');
+}
+
+
+@font-face {
+  font-family: 'Chivo-SemiBoldItalic';
+  src: url('/fonts/chivo/Chivo-SemiBoldItalic.woff2') format('woff2');
+}
+
+
 .font-neue-outline {
     font-family: 'NeueMetanaNextOutline-Black', sans-serif;
 }
@@ -31,10 +78,54 @@
     font-family: 'NeueMetanaNextOutline-Black', sans-serif;
     font-style: italic;
 }
-body{
-    background-color: #000;
+.font-chivo-black {
+    font-family: 'Chivo-Black', sans-serif;
 }
-h1{
-    font-weight: normal;
-    line-height: 1.2;
+.font-chivo-extrabold {
+    font-family: 'Chivo-ExtraBold', sans-serif;
+}
+.font-chivo-bold {
+    font-family: 'Chivo-Bold', sans-serif;
+}
+.font-chivo-semibold {
+    font-family: 'Chivo-SemiBold', sans-serif;
+}
+.font-chivo-medium {
+    font-family: 'Chivo-Medium', sans-serif;
+}
+.font-chivo-regular {
+    font-family: 'Chivo-Regular', sans-serif;
+}
+.font-chivo-italic {
+    font-family: 'Chivo-Italic', sans-serif;
+}
+.font-chivo-light {
+    font-family: 'Chivo-Light', sans-serif;
+}
+.font-chivo-thin {
+    font-family: 'Chivo-Thin', sans-serif;
+}
+
+
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #000;
+    --text-color: #fff;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1 {
+  font-weight: normal;
+  line-height: 1.2;
+  color: inherit;
 }

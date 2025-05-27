@@ -1,16 +1,17 @@
 ---
 import Navbar from "./navbar/navbar.astro";
-
+import "../css/global.css";
+import BottomNavbar from "./navbar/BottomNavbar";
 const { title = "Mi Portafolio", description = "Este es el portafolio de [Tu Nombre]", image = "/og-image.jpg", url = "https://tusitio.com" } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es" view-transition >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    
+
     <!-- SEO básico -->
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -37,7 +38,7 @@ const { title = "Mi Portafolio", description = "Este es el portafolio de [Tu Nom
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
     <!-- Estilos globales -->
-    <link rel="stylesheet" href="/styles/global.css" />
+    <!-- <link rel="stylesheet" href="/css/global.css" /> -->
 
     <script type="application/ld+json">
       {
@@ -61,12 +62,36 @@ const { title = "Mi Portafolio", description = "Este es el portafolio de [Tu Nom
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+
+    
   </head>
-  <body class="[background:radial-gradient(155%_106%_at_50%_9%,#001_44%,#113_100%)]">
-    
-   
-   <Navbar/>
+  <body class="md:py-10 bg-[radial-gradient(155%_106%_at_50%_9%,#f7f7f7_54%,#201a32_100%)] dark:bg-[radial-gradient(155%_106%_at_50%_9%,#001_44%,#113_100%)]">
+
+
+   <BottomNavbar client:only="react" />
+   <astro:root>
+   <main view-transition-name="page" >
    <slot />
-    
+    </main>
+    </astro:root>
   </body>
 </html>
+
+<style>
+::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: slide 0.4s ease;
+  }
+  @keyframes slide {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+</style>

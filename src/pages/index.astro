@@ -1,5 +1,7 @@
 ---
-import "../css/global.css";
+import ImageTiltCard from "../components/proyectos/ImageTiltCard";
+import Section from "../components/sections/section.astro";
+
 import Layout from "../layouts/layout.astro";
 ---
 
@@ -9,26 +11,20 @@ import Layout from "../layouts/layout.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>E. Tambornini - Portfolio</title>
 	</head>
 	<body>
 		<Layout>
 			<div class="flex flex-col items-center justify-center h-screen ">
 					<div class="flex flex-col items-center justify-center">
-						<img src="/favicon.svg" alt="Logo" class="w-24 h-24 mb-4 invert" />
-							<p class="font-neue-semi text-white text-md sm:text-lg ">Elias Tambornini</p>
+						<img src="/favicon.svg" alt="Logo" class="w-24 h-24 mb-4" />
+							<p class="font-neue-semi  text-md sm:text-lg ">Elias Tambornini</p>
 					</div>
-		<h1 class="font-neue-outline text-6xl sm:text-6xl md:text-6xl lg:text-8xl text-white">Portfolio</h1>
+		<h1 class="font-neue-semi text-6xl sm:text-6xl md:text-6xl lg:text-8xl text-center uppercase">Portfolio Digital</h1>
 			</div>
-		
-		<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 px-4 py-4">
-    <div class="w-full h-24 bg-blue-600 rounded-xl p-5 flex items-center"> <h3 class="text-3xl font-neue-semi text-white "> Sobre Mi: </h3></div>
-    <div class="w-full h-24 bg-blue-900 rounded-xl col-span-2"></div>
-    <div class="w-full h-24 bg-blue-900 rounded-xl col-span-2"></div>
-    <div class="w-full h-24 bg-blue-600 rounded-xl"></div>
-    <div class="w-full h-24 bg-blue-600 rounded-xl"></div>
-    <div class="w-full h-24 bg-blue-900 rounded-xl col-span-2"></div>
-</div>
+			<div class="md:px-40">
+			<Section/>
+			</div>
 		</Layout>
 	</body>
 </html>

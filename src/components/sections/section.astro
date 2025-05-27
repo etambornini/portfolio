@@ -1,0 +1,45 @@
+---
+import { ServiceCard } from '../../components/ServiceCard.jsx';
+const services = [
+
+ {
+    icon: "https://i.postimg.cc/ZqgqrqzG/icon-dev.png",
+    title: "Web Development",
+    description: "High-quality development of sites at the professional level.",
+  },
+   {
+    icon: "https://i.postimg.cc/xjLdzYxZ/icon-app.png",
+    title: "Mobile Apps",
+    description: "Professional development of applications for iOS and Android.",
+  },
+  {
+    icon: "https://i.postimg.cc/4389jZkP/icon-design.png",
+    title: "Web Design",
+    description: "The most modern and high-quality design made at a professional level.",
+  },
+ 
+ 
+  {
+    icon: "https://i.postimg.cc/0NL8zHpx/icon-photo.png",
+    title: "Photography",
+    description: "I make high-quality photos of any category at a professional level.",
+  },
+];
+---
+
+<section class="relative px-6 py-16 bg-[radial-gradient(125%_106%_at_50%_9%,#fdfdff_54%,#f8f8f8_100%)] dark:bg-[radial-gradient(155%_106%_at_50%_9%,#001_44%,#113_100%)] overflow-hidden border border-gray-300 dark:border-0 rounded-md">
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-purple-950/20 dark:bg-blue-800/10 blur-3xl rounded-full z-0 animate-pulse-slow"></div>
+  <div class="relative z-10 text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-chivo-bold uppercase text-gray-800 dark:text-gray-100 tracking-wide border-b-2 border-gray-500 inline-block pb-2 animate-fade-in">
+      Sobre mis habilidades
+    </h2>
+    <p class="mt-4 text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-chivo-regular animate-fade-in delay-200">
+      Descubrí cómo puedo ayudarte a transformar ideas en soluciones digitales.
+    </p>
+  </div>
+  <div class="grid md:grid-cols-2 gap-8 relative z-10 animate-fade-in delay-400">
+    {services.map(service => (
+      <ServiceCard {...service} />
+    ))}
+  </div>
+</section>

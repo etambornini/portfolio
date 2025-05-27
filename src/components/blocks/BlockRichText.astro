@@ -1,0 +1,10 @@
+---
+import { marked } from 'marked';
+export interface Props {
+  body: string;
+}
+const { body } = Astro.props;
+const html = marked(body || '');
+---
+
+<div class="prose prose-invert max-w-6xl mx-auto  rounded-md md:p-20 flex p-5 flex-col items-center content-center justify-center" set:html={html} />

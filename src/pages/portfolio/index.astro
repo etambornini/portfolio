@@ -1,0 +1,112 @@
+---
+import Layout from "../../layouts/layout.astro";
+
+const URL_BASE = import.meta.env.URL_BASE
+let portfolio = [];
+let fetchError = false;
+try {
+  const res = await fetch(`${import.meta.env.URL_API_BASE}/portfolios?populate=cover`);
+  const data = await res.json();
+  portfolio = data?.data || [];
+} catch (error) {
+  console.error("Error al obtener los portfolios:", error);
+  fetchError = true;
+}
+// const seoBlock = proyecto?.block?.find(b => b.__component === "shared.seo");
+// const metaTitle = seoBlock?.metaTitle ?? proyecto?.name;
+// const metaDescription = seoBlock?.metaDescription ?? proyecto?.description;
+// const ogImage = seoBlock?.shareImage?.url
+//   ? `http://localhost:1337${seoBlock.shareImage.formats?.medium?.url || seoBlock.shareImage.url}`
+//   : null;
+//console.log(portfolio)
+---
+{fetchError || portfolio.length === 0 ? (
+    <>
+    <head>
+        <title>Etambornini - Portfolios</title>
+        <meta name="description" content="Portafolio no encontrado" />
+    </head>
+    <Layout title="Portfolios no encontrados">
+        <div class="flex flex-col items-center justify-center h-screen ">
+            <div class="flex flex-col items-center justify-center">
+                <img src="/favicon.svg" alt="Logo" class="w-24 h-24 mb-4 invert" />
+                <p class="font-neue-semi text-md sm:text-lg ">Elias Tambornini</p>
+            </div>
+            <p class="text-center">Por favor, recargue la pagina.</p>
+        </div>
+    </Layout>
+    </>
+) : (
+    <>
+    <head>
+        <title>Etambornini - Portafolios</title>
+        <meta name="description" content="Portafolio de Elias Tambornini" />
+        <meta property="og:title" content="Etambornini - Portafolios" />
+        <meta property="og:description" content="Portafolio de Elias Tambornini" />
+        <meta property="og:image" content="/favicon.svg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://etambornini.com/portfolio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Etambornini - Portafolios" />
+        <meta name="twitter:description" content="Portafolio de Elias Tambornini" />
+        <meta name="twitter:image" content="/favicon.svg" />
+        <link rel="icon" href="/favicon.svg" />
+        
+    </head>
+    <Layout>
+        
+      <div class="flex flex-col items-center justify-center h-screen ">
+      <div class="flex flex-col items-center justify-center">
+        <img src="/favicon.svg" alt="Logo" class="w-24 h-24 mb-4" />
+        <p class="font-neue-semi  text-md sm:text-lg">Elias Tambornini</p>
+      </div>
+      <h1 class="font-neue-semi text-4xl sm:text-6xl md:text-6xl lg:text-8xl   uppercase">
+        Portfolios
+      </h1>
+    </div>
+
+
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-12 max-w-7xl mx-auto">
+          {portfolio.map((item) => (
+            <div class="relative group rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1">
+              <div class="absolute inset-0 z-0">
+                <img
+                  src={URL_BASE + item.cover.url}
+                  alt=""
+                  aria-hidden="true"
+                  class="w-full h-full object-cover blur-3xl opacity-50 scale-125 brightness-125 saturate-150"
+                />
+              </div>
+              <div class="relative overflow-hidden z-10">
+                <img
+                  src={URL_BASE + item.cover.url}
+                  alt={item.name}
+                  class="w-full h-60 object-cover transform group-hover:scale-120 transition-transform duration-500"
+                />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity z-20"></div>
+              <div class="absolute bottom-0 p-4 text-white w-full flex flex-col items-center z-30">
+                <h2 class="text-xl font-bold text-center drop-shadow-md">{item.name}</h2>
+                <a
+                  href={`/portfolio/${item.slug}`}
+                  class="mt-3 inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold rounded-full transition relative z-10 
+                         bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md shadow-blue-500/30
+                         hover:from-blue-600 hover:to-purple-700 hover:shadow-lg hover:shadow-purple-500/40
+                         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+                         dark:shadow-md dark:shadow-purple-500/30 dark:hover:shadow-lg dark:hover:shadow-purple-500/50"
+                  aria-label={`Ver Proyecto: ${item.name}`}
+                >
+                  Ver Proyecto
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+    </Layout>
+    </>
+)}

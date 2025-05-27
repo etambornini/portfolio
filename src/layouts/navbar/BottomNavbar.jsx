@@ -2,12 +2,10 @@ import { useState } from 'react';
 import { Home, Heart, SlidersHorizontal, CodeXml } from 'lucide-react';
 
 const BottomNavbar = () => {
-  const [activeTab, setActiveTab] = useState('favorites');
-
   const tabs = [
-    { name: 'home', icon: <Home size={24} />, label: 'HOME' },
-    { name: 'favorites', icon: <Heart size={28} />, label: 'FAVORITES' },
-    { name: 'settings', icon: <CodeXml size={24} />, label: 'SETTINGS' },
+    { name: 'home', icon: <Home size={24} />, label: 'HOME', href: '/' },
+    { name: 'favorites', icon: <Heart size={28} />, label: 'PORTFOLIO', href: '/portfolio' },
+    { name: 'settings', icon: <CodeXml size={24} />, label: 'CONTACT', href: '/settings' },
   ];
 
   return (
@@ -20,18 +18,17 @@ const BottomNavbar = () => {
             <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#2C2F3B] text-white text-sm px-4 py-1 rounded-md shadow opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
               {tab.label}
             </div>
-            <button
-              onClick={() => setActiveTab(tab.name)}
-              className="flex items-center justify-center"
+            <a
+              href={tab.href}
+            
+              className="flex items-center justify-center transition-link"
             >
               <div
-                className={`transition-colors duration-300 ${
-                  activeTab === tab.name ? 'text-white' : 'text-gray-500'
-                }`}
+                className="text-gray-500 transition-colors duration-300"
               >
                 {tab.icon}
               </div>
-            </button>
+            </a>
           </div>
         ))}
       </div>
