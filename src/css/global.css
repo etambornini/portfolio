@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: 'Chivo-SemiBold';
-  src: url('/fonts/chivo/Chivo-SemiBold.woff2') format('woff2');
+  src: url('/fonts/chivo/Chivo-Medium.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Chivo-Medium';
@@ -60,7 +60,7 @@
 
 @font-face {
   font-family: 'Chivo-SemiBoldItalic';
-  src: url('/fonts/chivo/Chivo-SemiBoldItalic.woff2') format('woff2');
+  src: url('/fonts/chivo/Chivo-MediumItalic.woff2') format('woff2');
 }
 
 

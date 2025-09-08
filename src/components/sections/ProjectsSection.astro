@@ -1,0 +1,267 @@
+---
+import ProjectsGallery from "../proyectos/ProjectsGallery.jsx";
+
+// Datos de ejemplo para los proyectos
+const projects = [
+  {
+    id: 1,
+    title: "E-Commerce Moderno",
+    shortDescription: "Plataforma de comercio electrónico con React y Node.js",
+    fullDescription: "Una plataforma completa de e-commerce desarrollada con las últimas tecnologías web. Incluye gestión de productos, carrito de compras, procesamiento de pagos y panel de administración. Diseñada con un enfoque mobile-first y optimizada para SEO.",
+    thumbnail: "/images/projects/ecommerce-thumb.svg",
+    images: [
+      "/images/projects/ecommerce-thumb.svg",
+      "/images/projects/ecommerce-thumb.svg",
+      "/images/projects/ecommerce-thumb.svg",
+      "/images/projects/ecommerce-thumb.svg"
+    ],
+    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS", "Express"],
+    features: [
+      "Autenticación de usuarios con JWT",
+      "Carrito de compras persistente",
+      "Integración con pasarelas de pago",
+      "Panel de administración completo",
+      "Búsqueda y filtros avanzados",
+      "Diseño responsive y accesible"
+    ],
+    liveUrl: "https://ecommerce-demo.vercel.app",
+    githubUrl: "https://github.com/usuario/ecommerce-project"
+  },
+  {
+    id: 2,
+    title: "Dashboard Analytics",
+    shortDescription: "Panel de control con visualización de datos en tiempo real",
+    fullDescription: "Dashboard interactivo para análisis de datos empresariales con gráficos dinámicos, métricas en tiempo real y reportes personalizables. Desarrollado con tecnologías modernas para ofrecer una experiencia de usuario excepcional.",
+    thumbnail: "/images/projects/dashboard-thumb.svg",
+    images: [
+      "/images/projects/dashboard-thumb.svg",
+      "/images/projects/dashboard-thumb.svg",
+      "/images/projects/dashboard-thumb.svg"
+    ],
+    technologies: ["Vue.js", "D3.js", "Python", "FastAPI", "PostgreSQL", "Chart.js"],
+    features: [
+      "Visualización de datos en tiempo real",
+      "Gráficos interactivos y personalizables",
+      "Exportación de reportes en PDF/Excel",
+      "Sistema de alertas automáticas",
+      "Filtros avanzados por fecha y categoría",
+      "Interfaz intuitiva y responsive"
+    ],
+    liveUrl: "https://dashboard-analytics.netlify.app",
+    githubUrl: "https://github.com/usuario/dashboard-analytics"
+  },
+  {
+    id: 3,
+    title: "App Móvil Fitness",
+    shortDescription: "Aplicación móvil para seguimiento de ejercicios y nutrición",
+    fullDescription: "Aplicación móvil completa para el seguimiento de rutinas de ejercicio, planes nutricionales y progreso físico. Incluye integración con dispositivos wearables y sistema de gamificación para motivar a los usuarios.",
+    thumbnail: "/images/projects/fitness-thumb.svg",
+    images: [
+      "/images/projects/fitness-thumb.svg",
+      "/images/projects/fitness-thumb.svg",
+      "/images/projects/fitness-thumb.svg",
+      "/images/projects/fitness-thumb.svg",
+      "/images/projects/fitness-thumb.svg"
+    ],
+    technologies: ["React Native", "Firebase", "Redux", "Node.js", "MongoDB", "Socket.io"],
+    features: [
+      "Seguimiento de rutinas personalizadas",
+      "Contador de calorías y macronutrientes",
+      "Integración con dispositivos wearables",
+      "Sistema de logros y recompensas",
+      "Chat en tiempo real con entrenadores",
+      "Sincronización multiplataforma"
+    ],
+    liveUrl: "https://play.google.com/store/apps/fitness-tracker",
+    githubUrl: "https://github.com/usuario/fitness-app"
+  },
+  {
+    id: 4,
+    title: "Sistema de Gestión Escolar",
+    shortDescription: "Plataforma web para administración educativa",
+    fullDescription: "Sistema integral de gestión escolar que permite administrar estudiantes, profesores, cursos, calificaciones y comunicación entre padres y docentes. Desarrollado con arquitectura escalable y seguridad avanzada.",
+    thumbnail: "/images/projects/school-thumb.svg",
+    images: [
+      "/images/projects/school-thumb.svg",
+      "/images/projects/school-thumb.svg"
+    ],
+    technologies: ["Angular", "Spring Boot", "MySQL", "JWT", "Bootstrap", "Docker"],
+    features: [
+      "Gestión completa de estudiantes y profesores",
+      "Sistema de calificaciones y reportes",
+      "Portal de padres con notificaciones",
+      "Calendario académico integrado",
+      "Módulo de biblioteca digital",
+      "Sistema de roles y permisos"
+    ],
+    liveUrl: "https://school-management-demo.herokuapp.com",
+    githubUrl: "https://github.com/usuario/school-management"
+  },
+  {
+    id: 5,
+    title: "Portfolio Interactivo",
+    shortDescription: "Sitio web personal con animaciones y efectos 3D",
+    fullDescription: "Portfolio personal desarrollado con las últimas tecnologías web, incluyendo animaciones fluidas, efectos 3D y un diseño completamente responsive. Optimizado para rendimiento y SEO.",
+    thumbnail: "/images/projects/portfolio-thumb.svg",
+    images: [
+      "/images/projects/portfolio-thumb.svg",
+      "/images/projects/portfolio-thumb.svg",
+      "/images/projects/portfolio-thumb.svg"
+    ],
+    technologies: ["Astro", "Three.js", "GSAP", "Tailwind CSS", "TypeScript", "Vercel"],
+    features: [
+      "Animaciones 3D interactivas",
+      "Transiciones suaves entre páginas",
+      "Modo oscuro/claro automático",
+      "Optimización para Core Web Vitals",
+      "Formulario de contacto funcional",
+      "Blog integrado con CMS"
+    ],
+    liveUrl: "https://mi-portfolio.vercel.app",
+    githubUrl: "https://github.com/usuario/portfolio-3d"
+  },
+  {
+    id: 6,
+    title: "API REST Microservicios",
+    shortDescription: "Arquitectura de microservicios con Docker y Kubernetes",
+    fullDescription: "API REST robusta desarrollada con arquitectura de microservicios, implementando patrones de diseño avanzados, containerización con Docker y orquestación con Kubernetes. Incluye monitoreo, logging y CI/CD.",
+    thumbnail: "/images/projects/api-thumb.svg",
+    images: [
+      "/images/projects/api-thumb.svg",
+      "/images/projects/api-thumb.svg",
+      "/images/projects/api-thumb.svg",
+      "/images/projects/api-thumb.svg"
+    ],
+    technologies: ["Node.js", "Docker", "Kubernetes", "Redis", "PostgreSQL", "Nginx"],
+    features: [
+      "Arquitectura de microservicios escalable",
+      "Autenticación y autorización JWT",
+      "Cache distribuido con Redis",
+      "Monitoreo con Prometheus y Grafana",
+      "CI/CD con GitHub Actions",
+      "Documentación automática con Swagger"
+    ],
+    githubUrl: "https://github.com/usuario/microservices-api"
+  }
+];
+---
+
+<section class="projects-section relative px-6 py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+  <!-- Background decorative elements -->
+  <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 dark:bg-blue-500/10 blur-3xl rounded-full animate-pulse-slow"></div>
+  <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500/10 dark:bg-purple-500/10 blur-3xl rounded-full animate-pulse-slow delay-1000"></div>
+  
+  <!-- Section Header -->
+  <div class="relative z-10 text-center mb-16">
+    <div class="inline-block">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-chivo-bold uppercase text-gray-800 dark:text-gray-100 tracking-wide mb-4 animate-fade-in">
+        Mis Proyectos
+      </h2>
+      <div class="h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full animate-fade-in delay-200"></div>
+    </div>
+    <p class="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-chivo-regular animate-fade-in delay-400 leading-relaxed">
+      Explora una selección de mis trabajos más destacados, desde aplicaciones web modernas hasta sistemas complejos de backend. Cada proyecto refleja mi pasión por crear soluciones innovadoras y funcionales.
+    </p>
+  </div>
+  
+  <!-- Projects Gallery -->
+  <div class="relative z-10 max-w-7xl mx-auto animate-fade-in delay-600">
+    <ProjectsGallery projects={projects as any} client:load />
+  </div>
+  
+  <!-- Call to Action -->
+  <div class="relative z-10 text-center mt-16 animate-fade-in delay-800">
+    <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto border border-gray-200 dark:border-gray-700 shadow-xl">
+      <h3 class="text-2xl md:text-3xl font-chivo-bold text-gray-800 dark:text-gray-100 mb-4">
+        ¿Tienes un proyecto en mente?
+      </h3>
+      <p class="text-gray-600 dark:text-gray-300 mb-6 font-chivo-regular">
+        Me encantaría colaborar contigo en tu próximo proyecto. Hablemos sobre cómo puedo ayudarte a convertir tus ideas en realidad.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="#contacto" 
+          class="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-chivo-semibold rounded-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+        >
+          Iniciar Conversación
+        </a>
+        <a 
+          href="/portfolio" 
+          class="inline-flex items-center justify-center px-8 py-3 bg-transparent text-gray-700 dark:text-gray-300 font-chivo-semibold rounded-lg border-2 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300"
+        >
+          Ver Todos los Proyectos
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse-slow {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+  
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+  
+  .delay-600 {
+    animation-delay: 0.6s;
+  }
+  
+  .delay-800 {
+    animation-delay: 0.8s;
+  }
+  
+  .delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .projects-section {
+      padding: 3rem 1rem;
+    }
+  }
+  
+  /* Accessibility improvements */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-pulse-slow {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>

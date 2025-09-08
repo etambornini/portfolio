@@ -1,0 +1,34 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="url(#gradient4)"/>
+  <defs>
+    <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8edea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- School building -->
+  <rect x="100" y="120" width="200" height="120" fill="white" opacity="0.9"/>
+  <polygon points="100,120 200,80 300,120" fill="white" opacity="0.9"/>
+  
+  <!-- Windows -->
+  <rect x="130" y="140" width="20" height="25" fill="#a8edea"/>
+  <rect x="170" y="140" width="20" height="25" fill="#a8edea"/>
+  <rect x="210" y="140" width="20" height="25" fill="#a8edea"/>
+  <rect x="250" y="140" width="20" height="25" fill="#a8edea"/>
+  
+  <!-- Door -->
+  <rect x="185" y="190" width="30" height="50" fill="#fed6e3"/>
+  
+  <!-- Books -->
+  <rect x="50" y="200" width="8" height="30" fill="white" opacity="0.8"/>
+  <rect x="60" y="195" width="8" height="35" fill="white" opacity="0.8"/>
+  <rect x="70" y="205" width="8" height="25" fill="white" opacity="0.8"/>
+  
+  <!-- Graduation cap -->
+  <rect x="320" y="100" width="40" height="4" fill="white" opacity="0.9"/>
+  <rect x="335" y="90" width="10" height="10" fill="white" opacity="0.9"/>
+  <line x1="345" y1="95" x2="355" y2="85" stroke="white" stroke-width="2" opacity="0.9"/>
+  
+  <text x="200" y="270" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">School Management</text>
+</svg>
